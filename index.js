@@ -24,4 +24,23 @@ for (let i = 0; i< 100; i++){
 
 }
 }
-createGrid();
+createGrid()
+
+
+
+function controls(a){
+    if(a.keyCode===39){
+        console.log("KeyRight")
+        direction = 1;
+    }else if(a.keyCode === 38){
+        console.log("keyUp")
+        direction = -width;
+    }else if(a.keyCode === 37){
+        console.log("keyLeft")
+        direction = -1
+    }else if(a.keyCode === 40){
+        console.log("keyDown")
+        direction = +width
+    }
+
+}
