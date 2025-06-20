@@ -47,7 +47,17 @@ function move(){
     currentSnake.unshift(currentSnake[0] + direction);
     squares[currentSnake[0]].classList.add("snake");
 
-
+if(squares[currentSnake[0]].classList.contains("apple")){
+        squares[currentSnake[0]].classList.remove("apple");
+        squares[tail].classList.add("snake");
+        currentSnake.push(tail);
+        generateApples();
+        score++;
+        scoreDisplay.textContent = score;
+        clearInterval(timerId);
+        intervelTime = intervelTime * speed;
+        timerId = setInterval(move,intervelTime)
+    }
     
 }
 
