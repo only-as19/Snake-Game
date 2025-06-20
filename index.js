@@ -13,6 +13,19 @@ let intervelTime = 1000;
 let speed = 0.9;
 let timerId = 0;
 
+function startGame(){
+    currentSnake.forEach(index => squares[index].classList.remove("snake"));
+    squares[appleIndex].classList.remove("apple");
+    clearInterval(timerId);
+    currentSnake = [2,1,0];
+    score = 0;
+    scoreDisplay.textContent = score;
+    direction = 1;
+    intervelTime = 1000;
+    generateApples();
+    currentSnake.forEach(index => squares[index].classList.add("snake"))
+    timerId = setInterval(move,intervelTime)
+}
 
 
 function createGrid(){
