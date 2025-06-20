@@ -28,6 +28,17 @@ createGrid()
 
 
 
+function generateApples(){
+    do{
+        appleIndex = Math.floor(Math.random() * squares.length)
+    }while (squares[appleIndex].classList.contains("apple"))
+        squares[appleIndex].classList.add("apple")
+
+}
+
+generateApples()
+
+
 function controls(a){
     if(a.keyCode===39){
         console.log("KeyRight")
